@@ -1,0 +1,231 @@
+<!-- I have already made navigation bar so please watch part 1 of this series I am just going to copy all the code  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Macoy's Strengthening Beauty Salon</title>
+
+    <!-- adding css  -->
+    <link rel="stylesheet" href="css/home.css">
+    <!-- about css  -->
+    <link rel="stylesheet" href="css/contact.css">
+
+    <!-- mediaQuery css  -->
+    <link rel="stylesheet" href="css/MediaQuery.css">
+
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header id="header" class="header">
+        <div class="top-bar">
+            <div class="container">
+                    <a class="navbar-item logo" href="home.html" title="HOME PAGE">
+                      <div class="logo">
+                           <img src="img/logoParlour.png" alt="Logo">
+                      </div>
+                    </a>
+                
+                    <form class="search-form" autocomplete="off" action="search.html" method="GET">
+                        <form class="inner"><input type="text" name="s" placeholder="Search..." autocomplete="off" value>
+                          <div class="suggestions" id="header-autocomplete-list"></div>
+                                <a href="search.html" title="Advance search" class="advance-search">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                      </form>
+                    </form>
+                <div class="d-flex align-items-center">
+                    <ul class="header_link top-list">
+                        <li class="header_links-item"><a href="home.html">Home</a></li>
+                        <li class="header_links-item"><a href="about.html">About Us</a></li>
+                        <li class="header_links-item"><a href="services.html">Services</a></li>
+                        <li class="header_links-item"><a href="portfolio.html">Portfolio</a></li>
+                        <li class="header_links-item"><a href="contact.html">Contact</a></li>
+                        <li class="header_links-item"><a href="#" class="header-notification notification-btn" id="notificationBtn"><i class="far fa-bell"></i><span class="notification-badge">3</span></a></li>
+                        <li class="header_links-item"><a href="account.html" class="header-account account-btn"><i class="far fa-user-circle"></i></a></li>
+                    </ul>
+                    <ul class="m-bars">
+                        <li class="header_links-item search"><i class="fa fa-search"></i></li>
+                        <li class="header_links-item hamburger"><a onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a></li>
+                        <li class="header_links-item notification">
+                            <i class="far fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </li>
+                        <li class="header_links-item user">
+                            <a class="user account-btn" title="My Account" href="account.html"><i class="far fa-user-circle"></i></a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+            <d class="mobile_sidebar snap-drawer-left" id="mobile-sidebar">
+                <div class="sidebar-header">
+                 <div class="sidebar_header-logo">
+                     <a href="home.html" title="HOME PAGE" style=" display: flex; align-items: center; justify-content: space-between;">
+                            <img src="img/logoParlour.png" alt="Logo" style="width: 300px;">
+                     </a>
+                    </div>
+                    <a onclick="toggleMobileMenu()" class="sidebar_header-close">
+                     <i class="fa fa-times"></i>
+                     </a>
+                </div>
+                <div class="sidebar-breadcrumb">
+                    NAVIGATION
+                    <li class="header_links-item dark-mode-setting">
+                      <span class="text">
+                         <i class="fas fa-sun"></i>
+                          "-"
+                         <i class="fas fa-moon"></i>
+                        </span>
+                        <div class="switch-container">
+                            <label>
+                             <input id="dark-cb" type="checkbox" class="switch darkmode-cb" onchange="darkModeChange()">
+                                <div>
+                                <div></div>
+                                </div>
+                            </label>
+                        </div>
+                    </li>
+                </div>
+            
+                <ul class="sidebar-menu">
+                 <li><a href="home.html"> <i class="fas fa-home"></i>Home</a></li>
+                 <li><a href="about.html">About Us</a></li>
+                 <li><a href="services.html">Services</a></li>
+                 <li><a href="portfolio.html">Portfolio</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="notification.html">Notifications</a></li>
+                 <li style="width: 100%;" class="account-menu">
+                     <a aria-expanded="false" href="account.html"><i class="fas fa-user"></i>My Account <i class="fas fa-caret-down"></i></a>
+                     <ul class="sidebar-menu">
+                            <li class="active" data-tab="profile">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </li>
+                            <li data-tab="schedule">
+                             <i class="fas fa-calendar-alt"></i>
+                              <span>My Schedule</span>
+                            </li>
+                            <li data-tab="history">
+                             <i class="fas fa-history"></i>
+                             <span>History</span>
+                            </li>
+                            <li data-tab="reviews">
+                                <i class="fas fa-star"></i>
+                             <span>My Reviews</span>
+                            </li>
+                       </ul>
+                  </li>
+                    <li>
+                        <a style="color: rgb(255, 0, 170);" href="logout.html" target="_blank" title="Logout">
+                         Logout <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-breadcrumb" style="bottom:0;margin-top:auto;padding: 20px;">Copyright &copy; 2026 Macoy Strengthening Beauty Salon</div>
+            </div>
+            <div id="mobile_sidebar-overlay" class="fade-in"></div>
+        </div>
+    </header>
+
+
+    <section class="sectionFirst">
+        <h1>Contact Us</h1>
+
+        <!-- transparent Img -->
+        <section class="transform-img">
+            <img src="img/background180.svg" alt="">
+        </section>
+    </section>
+
+
+    <!-- second section  -->
+    <section class="FormMap">
+        <div class="form">
+            <div class="f-head">Get In Touch</div>
+            <div class="f-para">Lorem ipsum dolor sit amet, elit. Explicabo?</div>
+
+            <form action="#">
+                <input type="text" name="" id="" placeholder="Name" required>
+                <input type="number" name="" id="" placeholder="Number" required>
+                <input type="email" name="" id="" placeholder="Email" required>
+                <select name="#" id="">
+                    <option value="#" disabled>Select Services</option>
+                    <option value="#">Clean Nail Art</option>
+                    <option value="#">Hair Styling</option>
+                    <option value="#">Full Body Massage</option>
+                </select>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <button type="submit">Send Request</button>
+            </form>
+        </div>
+
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.5149208586167!2d77.08639887464352!3d28.494151690352858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d193845155555%3A0x60d85750634bd7b2!2sGoogle%20DLF%20Tower%208C!5e0!3m2!1sen!2sin!4v1691352060091!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- beforefooter  -->
+    <div class="beforefooter">
+        <div class="box">
+            <div class="logo">Macoy Strengthening Beauty Salon</div>
+            <div class="bf-text">Macoy Manuel Veloso</div>
+            <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam sit magni et
+                consequatur, tenetur ab doloremque totam necessitatibus inventore optio qui? Inventore vel quibusdam
+                exercitationem, nulla asperiores fugiat totam!
+            </p>
+
+            <div class="bf-text" style="margin-top: 1.5rem;">Follow Us</div>
+            <div class="icons">
+                <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+                <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Quick Links</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="protfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="bf-text" style="margin-top: 1rem;">Find Us</div>
+            <div class="address">
+                Paliparan 3 Mabuhay City Subd., Blg. 123, Dasmariñas City, Cavite
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Say Hi! </div>
+            <ul class="SayHi">
+                <li><a href="index.html">info@example.com</a></li>
+                <li><a href="about.html">contact@example.com</a></li>
+            </ul>
+
+            <div class="bf-text">Call Us</div>
+            <ul class="SayHi">
+                <li>Phone :+1 2334325532</li>
+                <li>Toll Free:+1 2334325532</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="fbox">Copyright &copy; 2026 Macoy Strengthening Beauty Salon</div>
+        <div class="fbox">Powered by Macoy Strengthening Beauty Salon</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
