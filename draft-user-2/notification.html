@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Macoy's Strengthening Beauty Salon</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/MediaQuery.css">
+
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+
+    <style>
+        .notifications-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .notification-list {
+            list-style: none;
+            padding: 0;
+        }
+        .notification-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .notification-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .notification-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #ff6b9d;
+            background: #ffeef5;
+            flex-shrink: 0;
+        }
+        .notification-item.unread {
+            border-left: 4px solid #ff6b9d;
+        }
+        .notification-content strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .notification-time {
+            color: #888;
+            font-size: 14px;
+        }
+        .no-notifications {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        .badge {
+            background: #ff6b9d;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .notifications-container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header" class="header">
+        <!-- Same header as home.html/account.html -->
+        <div class="top-bar">
+            <div class="container">
+                <a class="navbar-item logo" href="home.html" title="HOME PAGE">
+                    <div class="logo">
+                     <img src="img/SalonLogo.png" alt="Logo">
+                    </div>
+                </a>
+                
+                <div class="right-section">
+                    <form class="search-form" autocomplete="off" action="search.html" method="GET">
+                        <form class="inner"><input type="text" name="s" placeholder="Search..." autocomplete="off" value>
+                            <div class="suggestions" id="header-autocomplete-list">
+                                <a href="search.html" title="Advance search" class="advance-search">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </form>
+                    
+                    <div class="d-flex align-items-center">
+                    <ul class="header_link top-list">
+<li class="header_links-item"><a href="home.html"><i class="fas fa-home"></i></a></li>
+                        <li class="header_links-item"><a href="#" class="header-notification notification-btn" id="notificationBtn"><i class="far fa-bell"></i><span class="notification-badge" id="notifBadge">3</span></a></li>
+                        <li class="header_links-item"><a href="about.html">About Us</a></li>
+                        <li class="header_links-item"><a href="services.html">Services</a></li>
+                        <li class="header_links-item"><a href="portfolio.html">Portfolio</a></li>
+                        <li class="header_links-item"><a href="contact.html">Contact</a></li>
+                        <li class="header_links-item"><a href="account.html" class="header-account account-btn"><i class="far fa-user-circle"></i></a></li>
+                    </ul>
+                    <ul class="m-bars">
+                        <li class="header_links-item search"><i class="fa fa-search"></i></li>
+                        <li class="header_links-item hamburger"><a onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a></li>
+                        <li class="header_links-item notification">
+                            <i class="far fa-bell"></i>
+                        </li>
+                        <li class="header_links-item user">
+                            <a class="user account-btn" title="My Account" href="account.html"><i class="far fa-user-circle"></i></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile sidebar same as home.html -->
+            <div class="mobile_sidebar snap-drawer-left" id="mobile-sidebar">
+                <!-- Same mobile sidebar content as home.html -->
+                <div class="sidebar-header">
+                 <div class="sidebar_header-logo">
+                        <a href="home.html" title="HOME PAGE" style=" display: flex; align-items: center; justify-content: space-between;">
+                            <img src="img/SalonLogo.png" alt="Logo" style="width: 300px;">
+                        </a>
+                    </div>
+                    <a onclick="toggleMobileMenu()" class="sidebar_header-close">
+                     <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="sidebar-breadcrumb">NAVIGATION</div>
+                <ul class="sidebar-menu">
+                 <li><a href="home.html"> <i class="fas fa-home"></i>Home</a></li>
+                 <li class="active"><a href="notification.html"><i class="fas fa-bell"></i>Notifications</a></li>
+                 <li><a href="about.html">About Us</a></li>
+                 <li><a href="services.html">Services</a></li>
+                 <li><a href="portfolio.html">Portfolio</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li style="width: 100%;" class="account-menu">
+                     <a href="account.html"><i class="fas fa-user"></i>My Account</a>
+                  </li>
+                </ul>
+            </div>
+            <div id="mobile_sidebar-overlay" class="fade-in"></div>
+        </div>
+    </header>
+    
+    <!-- Notification Dropdown - Moved to body -->
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div class="notification-header">
+         <h4>Notifications <span class="badge" id="dropdownBadge">3</span></h4>
+      </div>
+      <ul class="notification-list">
+            <li class="notification-item unread">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>New appointment booked successfully!</strong>
+                    <span>2 hours ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Reminder: Tomorrow 2PM Haircut</strong>
+                    <span>1 day ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-gift"></i>
+                <div>
+                    <strong>25% off promotion available</strong>
+                    <span>3 days ago</span>
+                </div>
+            </li>
+      </ul>
+      <div class="notification-footer">
+            <a href="notification.html">View all</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="notifications-container">
+        <div class="section-header">
+            <h2>Your Notifications</h2>
+            <p id="notifCount">5 unread notifications</p>
+        </div>
+
+
+
+        <!-- Notifications List -->
+        <ul class="notification-list" id="notificationList">
+            <!-- Notifications populated by JS -->
+        </ul>
+    </div>
+
+    <!-- Footer same as home.html -->
+    <div class="beforefooter">
+        <div class="box">
+            <div class="logo">Macoy Strengthening Beauty Salon</div>
+            <div class="bf-text">Macoy Manuel Veloso</div>
+            <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam sit magni et consequatur, tenetur ab doloremque totam necessitatibus inventore optio qui? Inventore vel quibusdam exercitationem, nulla asperiores fugiat totam!</p>
+            <div class="icons">
+                <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+                <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+            </div>
+        </div>
+        <!-- Other footer boxes same as home -->
+    </div>
+    <footer>
+        <div class="fbox">Copyright © 2026 Macoy Strengthening Beauty Salon</div>
+        <div class="fbox">Powered by Macoy Strengthening Beauty Salon</div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Sample notifications data
+        const notifications = [
+            { id: 1, type: 'schedule', icon: 'fa-calendar-check', title: 'New appointment booked successfully!', time: '2 hours ago', unread: true },
+            { id: 2, type: 'schedule', icon: 'fa-clock', title: 'Reminder: Tomorrow 2PM Haircut with Sarah', time: '1 day ago', unread: false },
+            { id: 3, type: 'promo', icon: 'fa-gift', title: '25% off promotion available on all services!', time: '3 days ago', unread: true },
+            { id: 4, type: 'email', icon: 'fa-envelope', title: 'Welcome email - Account verification completed', time: '1 week ago', unread: false },
+            { id: 5, type: 'sms', icon: 'fa-sms', title: 'SMS: Your rebond service is ready tomorrow!', time: '2 days ago', unread: true },
+            { id: 6, type: 'promo', icon: 'fa-percent', title: 'Flash sale: 50% off nail services this weekend', time: '4 hours ago', unread: true }
+        ];
+
+        function displayNotifications() {
+            const list = document.getElementById('notificationList');
+            const unreadCount = notifications.filter(n => n.unread).length;
+            document.getElementById('notifCount').textContent = `${notifications.length} notifications (${unreadCount} unread)`;
+            const badge = document.getElementById('notifBadge');
+            if (badge) badge.textContent = unreadCount || '';
+            const dropdownBadge = document.getElementById('dropdownBadge');
+            if (dropdownBadge) dropdownBadge.textContent = unreadCount || '';
+
+            list.innerHTML = notifications.map(notif => `
+                <li class="notification-item ${notif.unread ? 'unread' : ''}" onclick="markRead(${notif.id})">
+                    <div class="notification-icon">
+                        <i class="fas ${notif.icon}"></i>
+                    </div>
+                    <div class="notification-content">
+                        <strong>${notif.title}</strong>
+                        <span class="notification-time">${notif.time}</span>
+                    </div>
+                </li>
+            `).join('');
+        }
+
+        function markRead(id) {
+            const notif = notifications.find(n => n.id === id);
+            if (notif && notif.unread) {
+                notif.unread = false;
+                displayNotifications();
+            }
+        }
+
+        // Initialize - show all notifications
+        document.addEventListener('DOMContentLoaded', displayNotifications);
+    </script>
+</body>
+</html>
