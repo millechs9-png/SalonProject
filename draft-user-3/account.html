@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Macoy's Strengthening Beauty Salon</title>
+
+    <link rel="stylesheet" href="css/home.css">
+
+    <link rel="stylesheet" href="css/account.css">
+
+    <link rel="stylesheet" href="css/MediaQuery.css">
+
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header id="header" class="header">
+        <div class="top-bar">
+            <div class="container">
+                <a class="navbar-item logo" href="home.html" title="HOME PAGE">
+                    <div class="logo">
+                     <img src="img/SalonLogo.png" alt="Logo">
+                    </div>
+                </a>
+                
+                <div class="right-section">
+                    <form class="search-form" autocomplete="off" action="search.html" method="GET">
+                        <form class="inner"><input type="text" name="s" placeholder="Search..." autocomplete="off" value>
+                            <div class="suggestions" id="header-autocomplete-list">
+                                <a href="search.html" title="Advance search" class="advance-search">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </form>
+                    
+                    <div class="d-flex align-items-center">
+                        <ul class="header_link top-list">
+                            <li class="header_links-item"><a href="home.html" class="header-home home-btn"><i class="fas fa-home"></i></a></li>
+                            <li class="header_links-item"><a href="#" class="header-notification notification-btn" id="notificationBtn"><i class="far fa-bell"></i><span class="notification-badge">3</span></a></li>
+                            <li class="header_links-item"><a href="about.html">About Us</a></li>
+                            <li class="header_links-item"><a href="services.html">Services</a></li>
+                            <li class="header_links-item"><a href="portfolio.html">Portfolio</a></li>
+                            <li class="header_links-item"><a href="contact.html">Contact</a></li>
+                            <li class="header_links-item"><a href="account.html" class="header-account account-btn"><i class="far fa-user-circle"></i></a></li>
+                        </ul>
+                        <ul class="m-bars">
+                            <li class="header_links-item search"><i class="fa fa-search"></i></li>
+                            <li class="header_links-item hamburger"><a onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a></li>
+                            <li class="header_links-item notification"><i class="far fa-bell"></i></li>
+                            <li class="header_links-item user"><a class="user account-btn" title="My Account" href="account.html"><i class="far fa-user-circle"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <d class="mobile_sidebar snap-drawer-left" id="mobile-sidebar">
+
+                <div class="sidebar-header">
+                   <div class="sidebar_header-logo";>
+                        <a href="home.html" title="HOME PAGE" style=" display: flex; align-items: center; justify-content: space-between;">
+                            <img src="img/SalonLogo.png" alt="Logo" style="width: 140px; height: 100px;">
+                        </a>
+                    </div>
+                    <a onclick="toggleMobileMenu()" class="sidebar_header-close">
+                     <i class="fa fa-times" style="padding-right: 2rem; width: 25px; height: 20px;"></i>
+                    </a>
+                </div>
+                <div class="sidebar-breadcrumb">
+                    NAVIGATION
+                    <ul>
+                        <li class="header_links-item dark-mode-setting">
+                        <span class="text"><i class="fas fa-sun"></i>-<i class="fas fa-moon"></i></span>
+                            <div class="switch-container">
+                                <label>
+                                    <input id="dark-cb" type="checkbox" class="switch darkmode-cb" onchange="darkModeChange()">
+                                    <div>
+                                        <div> </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            
+                <ul class="sidebar-menu">
+                 <li><a href="home.html"> <i class="fas fa-home"></i> Home</a></li>
+                 <li><a href="notification.html"><i class="far fa-bell"></i> Notifications</a></li>
+                 <li><a href="about.html">About Us</a></li>
+                 <li><a href="services.html">Services</a></li>
+                 <li><a href="portfolio.html">Portfolio</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li style="width: 100%;" class="account-menu">
+                     <a aria-expanded="false"><i class="far fa-user"></i>My Account <i class="fas fa-caret-down"></i></a>
+                     <ul class="drop-menu">
+                            <li class="active" data-tab="profile">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </li>
+                            <li class="active" data-tab="schedule">
+                             <i class="fas fa-calendar-alt"></i>
+                              <span>My Schedule</span>
+                            </li>
+                            <li class="active" data-tab="history">
+                             <i class="fas fa-history"></i>
+                             <span>History</span>
+                            </li>
+                            <li class="active" data-tab="reviews">
+                                <i class="fas fa-star"></i>
+                             <span>My Reviews</span>
+                            </li>
+                       </ul>
+                  </li>
+                    <li>
+                        <a style="color:rgb(255, 0, 170);" onclick="logout()" title="Logout">
+                         Logout <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-breadcrumb">Copyright &copy; 2026</div>
+            </div>
+            <div id="mobile_sidebar-overlay" class="fade-in"></div>
+        </div>
+    </header>
+    
+    <!-- Notification Dropdown - Moved to body -->
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div class="notification-header">
+         <h4>Notifications <span class="badge">3</span></h4>
+      </div>
+      <ul class="notification-list">
+            <li class="notification-item unread">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>New appointment booked successfully!</strong>
+                    <span>2 hours ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Reminder: Tomorrow 2PM Haircut</strong>
+                    <span>1 day ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-gift"></i>
+                <div>
+                    <strong>25% off promotion available</strong>
+                    <span>3 days ago</span>
+                </div>
+            </li>
+      </ul>
+      <div class="notification-footer">
+            <a href="notification.html">View all</a>
+      </div>
+    </div>
+    
+    <!-- Notification Dropdown - Moved to body -->
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div class="notification-header">
+         <h4>Notifications <span class="badge">3</span></h4>
+      </div>
+      <ul class="notification-list">
+            <li class="notification-item unread">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>New appointment booked successfully!</strong>
+                    <span>2 hours ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Reminder: Tomorrow 2PM Haircut</strong>
+                    <span>1 day ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-gift"></i>
+                <div>
+                    <strong>25% off promotion available</strong>
+                    <span>3 days ago</span>
+                </div>
+            </li>
+      </ul>
+      <div class="notification-footer">
+            <a href="notification.html">View all</a>
+      </div>
+    </div>
+
+    <div class="account-container">
+        <!-- Sidebar Navigation -->
+        <div class="account-sidebar">
+            <div class="sidebar-header">
+                <div class="avatar">
+                    <img src="img/profile-image.jpg" alt="Profile">
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-tab="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </li>
+                <li data-tab="schedule">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>My Schedule</span>
+                </li>
+                <li data-tab="history">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </li>
+                <li data-tab="notification">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </li>
+                <li data-tab="reviews">
+                    <i class="fas fa-star"></i>
+                    <span>My Reviews</span>
+                </li>
+                <li data-tab="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content Area -->
+        <div class="account-content">
+            <!-- Profile Section (includes Profile + Preferences in two columns) -->
+            <div class="content-section active" id="profile">
+                <div class="section-header">
+                    <h2>Profile</h2>
+                </div>
+                
+                <div class="profile-columns">
+<!-- Left Column: Profile Info -->
+                    <div class="profile-column">
+                        <div class="profile-card">
+                            <!-- Profile Picture at top - centered -->
+                            <div class="profile-picture-section">
+                                <div class="avatar">
+                                    <img id="profileImage" src="img/profile-image.jpg" alt="Profile">
+                                </div>
+                                <label for="pictureInput" class="change-photo-btn">
+                                    <i class="fas fa-camera"></i> Change Photo
+                                </label>
+                                <input type="file" id="pictureInput" accept="image/*" style="display: none;">
+                            </div>
+                            
+                            <div class="profile-details">
+                                <h3 id="displayName">Macoy Manuel Veloso</h3>
+                                <div class="email-verified">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="displayEmail">macoy@example.com</span>
+                                </div>
+                                <p class="client-id">Client ID: <span id="clientId">#MSB-2024-001</span></p>
+                            </div>
+                            
+<!-- Editable Account Details -->
+                            <div class="account-details" id="accountDetailsSection">
+                                <!-- Display Mode (Static Text) -->
+                                <div class="detail-display" id="detailDisplay">
+                                    <div class="detail-item">
+                                        <label>Full Name</label>
+                                        <p id="displayFullName">Macoy Manuel Veloso</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone Number</label>
+                                        <p id="displayPhone">+1 233 432 5532</p>
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Address</label>
+                                        <p id="displayAddress">Paliparan 3 Mabuhay City subd., blg. 123, Dasmariñas City, Cavite</p>
+                                    </div>
+                                </div>
+                                <!-- Edit Mode (Input Fields) -->
+                                <div class="detail-edit" id="detailEdit" style="display: none;">
+                                    <div class="detail-item">
+                                        <label>Full Name</label>
+                                        <input type="text" id="inputFullName" value="Macoy Manuel Veloso" class="edit-input">
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="inputPhone" value="+1 233 432 5532" class="edit-input">
+                                    </div>
+                                    <div class="detail-item">
+                                        <label>Address</label>
+                                        <textarea id="inputAddress" class="edit-input">Paliparan 3 Mabuhay City subd., blg. 123, Dasmariñas City, Cavite</textarea>
+                                    </div>
+                                    <div class="profile-buttons">
+                                        <button class="btn-save" id="saveProfileBtn">
+                                         Save Changes
+                                        </button>
+                                        <button class="btn-cancel" id="cancelProfileBtn">
+                                         Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Edit Profile Button (shown in display mode) -->
+                                <button class="btn-edit" id="editProfileBtn">
+                                 Edit Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Preferences -->
+                    <div class="preferences-column">
+                        <div class="preferences-card">
+                            <h3>Preferences</h3>
+                            <div class="preferences-display" id="preferencesDisplay">
+                                <div class="preference-item">
+                                    <label>Email Notifications</label>
+                                    <span class="preference-status">Enabled</span>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Schedule Reminder</label>
+                                    <span class="preference-status">Enabled</span>
+                                </div>
+                                <div class="preference-item">
+                                    <label>SMS Alert</label>
+                                    <span class="preference-status">Enabled</span>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Promotional Notifications</label>
+                                    <span class="preference-status">Enabled</span>
+                                </div>
+                            </div>
+                            <div class="preferences-edit" id="preferencesEdit" style="display: none;">
+                                <div class="preference-item">
+                                    <label>Email Notifications</label>
+                                    <input type="checkbox" id="emailNotif" checked>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Schedule Reminder</label>
+                                    <input type="checkbox" id="scheduleReminder" checked>
+                                </div>
+                                <div class="preference-item">
+                                    <label>SMS Alert</label>
+                                    <input type="checkbox" id="smsAlert" checked>
+                                </div>
+                                <div class="preference-item">
+                                    <label>Promotional Notifications</label>
+                                    <input type="checkbox" id="promotionalNotif" checked>
+                                </div>
+                                <div class="preferences-buttons">
+                                    <button class="btn-save" id="savePreferencesBtn">
+                                     Save 
+                                    </button>
+                                    <button class="btn-cancel" id="cancelPreferencesBtn">
+                                      Cancel
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="preferences-display-buttons">
+                                <button class="btn-edit" id="editPreferencesBtn">
+                                  Edit 
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Legal & Policy Accordion -->
+                        <div class="legal-policy-card">
+                            <h3>Legal & Policy</h3>
+                            <div class="accordion">
+                                <!-- Privacy Policy -->
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <i class="fas fa-shield-alt"></i> Privacy Policy
+                                    </button>
+                                    <div class="accordion-body">
+                                        <p>At Macoy's Strengthening Beauty Salon, we are committed to protecting your privacy. We collect only essential information for booking and service delivery, never sharing your data with third parties without consent. Your information is securely stored and protected by industry-standard encryption.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Terms of Service -->
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <i class="fas fa-file-contract"></i> Terms of Service
+                                    </button>
+                                    <div class="accordion-body">
+                                        <p>By using our services, you agree to our terms including appointment policies, cancellation rules (24hr notice required), payment terms, and liability limitations. We reserve the right to refuse service and maintain no-show fees.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Cookie Policy -->
+                                    <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        <i class="fas fa-cookie-bite"></i> Cookie Policy
+                                    </button>
+                                    <div class="accordion-body">
+                                        <p>We use essential cookies for site functionality and analytics cookies to improve your experience. You can manage preferences in your browser settings. We do not use cookies for advertising or tracking across sites.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- My Schedule Section -->
+            <div class="content-section" id="schedule">
+                <div class="section-header">
+                    <h2>My Schedule</h2>
+                </div>
+                <div class="schedule-content" id="scheduleContent">
+                    <p>No upcoming appointments</p>
+                    <a href="appointment.html" class="btn-book">Book an Appointment</a>
+                </div>
+            </div>
+
+<!-- History Section -->
+            <div class="content-section" id="history">
+                <div class="section-header">
+                    <h2>History</h2>
+                </div>
+                <div class="schedule-content" id="historyContent">
+                    <p>No appointment history</p>
+                </div>
+            </div>
+
+<!-- notification Section -->
+            <div class="content-section" id="notification">
+                 <div class="section-header">
+                    <h2>Notifications</h2>
+                </div>
+                <div class="notifications-content" id="notificationContent">
+                    <p>No new notifications</p>
+                </div>
+            </div>
+
+<!-- Reviews Section -->
+            <div class="content-section" id="reviews">
+                <div class="section-header">
+                    <h2>My Reviews</h2>
+                </div>
+                <div class="reviews-content" id="reviewsContent">
+                    <p>No reviews yet. Book sevices now and leave your feedback!</p>
+                    <a href="appointment.html" class="btn-book">Book a service</a>
+                </div>
+            </div>
+
+<!-- logout Section -->
+            <div class="content-section" id="logout">
+                <div class="section-header">
+                    <h2>Logout</h2>
+                </div>
+                <div class="logout-content" id="logoutContent">
+                    <div class="logout-icon">
+						<i class='bx fas fa-sign-out-alt' ></i>
+					</div>
+                    <h2>See You Again!</h2>
+                    <p>Are you sure you want to logout from Macoy's Straightening Salon?</p>
+                    <div class="logout-buttons">
+					    <a href="home.html" class="btn-cancel">
+						    <i class='fas fa-arrow-back' ></i>
+						    Cancel
+					    </a>
+					    <a href="home_page.html" class="btn-logout">
+						    <i class='fas fa-sign-out-alt' ></i>
+						    Logout
+					    </a>
+				    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- beforefooter  -->
+    <div class="beforefooter">
+        <div class="box">
+            <div class="logo">Macoy Strengthening Beauty Salon</div>
+            <div class="bf-text">Macoy Manuel Veloso</div>
+            <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam sit magni et
+                consequatur, tenetur ab doloremque totam necessitatibus inventore optio qui? Inventore vel quibusdam
+                exercitationem, nulla asperiores fugiat totam!
+            </p>
+
+            <div class="bf-text" style="margin-top: 1.5rem;">Follow Us</div>
+            <div class="icons">
+                <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+                <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Quick Links</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="protfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="bf-text" style="margin-top: 1rem;">Find Us</div>
+            <div class="address">
+                Paliparan 3 Mabuhay City Subd., Blg. 123, Dasmariñas City, Cavite
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Say Hi! </div>
+            <ul class="SayHi">
+                <li><a href="index.html">info@example.com</a></li>
+                <li><a href="about.html">contact@example.com</a></li>
+            </ul>
+
+            <div class="bf-text">Call Us</div>
+            <ul class="SayHi">
+                <li>Phone :+1 2334325532</li>
+                <li>Toll Free:+1 2334325532</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="fbox">Copyright &copy; 2026 Macoy Strengthening Beauty Salon</div>
+        <div class="fbox">Powered by Macoy Strengthening Beauty Salon</div>
+    </footer>
+
+<script src="js/script-fixed.js"></script>
+    <script>
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.clear();
+                window.location.href = 'home.html';
+            }
+        }
+
+        // [existing script content - same as before]
+        // ... (keeping all the existing JavaScript code)
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macoy's Straithening Beauty Salon</title>
+
+    <!-- adding css  -->
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- mediaQuery css  -->
+    <link rel="stylesheet" href="css/MediaQuery.css">
+
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header id="header" class="header">
+        <div class="top-bar">
+            <div class="container">
+                <a class="navbar-item logo" href="home.html" title="HOME PAGE">
+                    <div class="logo">
+                     <img src="img/SalonLogo.png" alt="Logo">
+                    </div>
+                </a>
+                
+                <div class="right-section">
+                    <form class="search-form" autocomplete="off" action="search.html" method="GET">
+                        <form class="inner"><input type="text" name="s" placeholder="Search..." autocomplete="off" value>
+                            <div class="suggestions" id="header-autocomplete-list">
+                                <a href="search.html" title="Advance search" class="advance-search">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </form>
+                    
+                    <div class="d-flex align-items-center">
+                        <ul class="header_link top-list">
+                            <li class="header_links-item"><a href="home.html" class="header-home home-btn"><i class="fas fa-home"></i></a></li>
+                            <li class="header_links-item"><a href="#" class="header-notification notification-btn" id="notificationBtn"><i class="far fa-bell"></i><span class="notification-badge">3</span></a></li>
+                            <li class="header_links-item"><a href="about.html">About Us</a></li>
+                            <li class="header_links-item"><a href="services.html">Services</a></li>
+                            <li class="header_links-item"><a href="portfolio.html">Portfolio</a></li>
+                            <li class="header_links-item"><a href="contact.html">Contact</a></li>
+                            <li class="header_links-item"><a href="account.html" class="header-account account-btn"><i class="far fa-user-circle"></i></a></li>
+                        </ul>
+                        <ul class="m-bars">
+                            <li class="header_links-item search"><i class="fa fa-search"></i></li>
+                            <li class="header_links-item hamburger"><a onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a></li>
+                            <li class="header_links-item notification"><i class="far fa-bell"></i></li>
+                            <li class="header_links-item user"><a class="user account-btn" title="My Account" href="account.html"><i class="far fa-user-circle"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <d class="mobile_sidebar snap-drawer-left" id="mobile-sidebar">
+
+                <div class="sidebar-header">
+                   <div class="sidebar_header-logo";>
+                        <a href="home.html" title="HOME PAGE" style=" display: flex; align-items: center; justify-content: space-between;">
+                            <img src="img/SalonLogo.png" alt="Logo" style="width: 140px; height: 100px;">
+                        </a>
+                    </div>
+                    <a onclick="toggleMobileMenu()" class="sidebar_header-close">
+                     <i class="fa fa-times" style="padding-right: 2rem; width: 25px; height: 20px;"></i>
+                    </a>
+                </div>
+                <div class="sidebar-breadcrumb">
+                    NAVIGATION
+                    <ul>
+                        <li class="header_links-item dark-mode-setting">
+                        <span class="text"><i class="fas fa-sun"></i>-<i class="fas fa-moon"></i></span>
+                            <div class="switch-container">
+                                <label>
+                                    <input id="dark-cb" type="checkbox" class="switch darkmode-cb" onchange="darkModeChange()">
+                                    <div>
+                                        <div> </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            
+                <ul class="sidebar-menu">
+                 <li><a href="home.html"> <i class="fas fa-home"></i> Home</a></li>
+                 <li><a href="notification.html"><i class="far fa-bell"></i> Notifications</a></li>
+                 <li><a href="about.html">About Us</a></li>
+                 <li><a href="services.html">Services</a></li>
+                 <li><a href="portfolio.html">Portfolio</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li style="width: 100%;" class="account-menu">
+                     <a aria-expanded="false"><i class="far fa-user"></i>My Account <i class="fas fa-caret-down"></i></a>
+                     <ul class="drop-menu">
+                            <li class="active" data-tab="profile">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </li>
+                            <li class="active" data-tab="schedule">
+                             <i class="fas fa-calendar-alt"></i>
+                              <span>My Schedule</span>
+                            </li>
+                            <li class="active" data-tab="history">
+                             <i class="fas fa-history"></i>
+                             <span>History</span>
+                            </li>
+                            <li class="active" data-tab="reviews">
+                                <i class="fas fa-star"></i>
+                             <span>My Reviews</span>
+                            </li>
+                       </ul>
+                  </li>
+                    <li>
+                        <a style="color:rgb(255, 0, 170);" href="logout.html" target="_blank" title="Logout">
+                         Logout <i class="fas fa-sign-out-alt"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-breadcrumb">Copyright &copy; 2026</div>
+            </div>
+            <div id="mobile_sidebar-overlay" class="fade-in"></div>
+        </div>
+    </header>
+    
+    <!-- Notification Dropdown - Moved to body -->
+    <div class="notification-dropdown" id="notificationDropdown">
+      <div class="notification-header">
+         <h4>Notifications <span class="badge">3</span></h4>
+      </div>
+      <ul class="notification-list">
+            <li class="notification-item unread">
+                <i class="fas fa-calendar-check"></i>
+                <div>
+                    <strong>New appointment booked successfully!</strong>
+                    <span>2 hours ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <strong>Reminder: Tomorrow 2PM Haircut</strong>
+                    <span>1 day ago</span>
+                </div>
+            </li>
+            <li class="notification-item">
+                <i class="fas fa-gift"></i>
+                <div>
+                    <strong>25% off promotion available</strong>
+                    <span>3 days ago</span>
+                </div>
+            </li>
+      </ul>
+      <div class="notification-footer">
+            <a href="notification.html">View all</a>
+      </div>
+    </div>
+
+
+    <section class="sectionFirst">
+        <div class="frontPage">
+            <h2 class="heading">Macoy's Strengthening Beauty Salon</h2>
+            <p class="para"> Step into comfort and leave with confidence—reserve your appointment now!</p>
+            <div class="btn">
+                <a href="services.html">Get Your Style</a>
+                <a href="appointment.html">Book Now</a>
+            </div>
+        </div>
+
+        <!-- transparent Img -->
+        <section class="transform-img">
+            <img src="img/background180.svg" alt="">
+        </section>
+    </section>
+
+
+    <!-- section second  -->
+    <section class="sectionSecond">
+        <div class="fourIMG">
+            <img src="img/home-model1.jpg" alt="">
+            <img src="img/home-model2.jpg" alt="">
+            <img src="img/home-model3.jpg" alt="">
+            <img src="img/home-model4.jpg" alt="">
+        </div>
+
+
+        <div class="textInfo">
+            <div class="greet">Welcome To</div>
+            <h2 class="title">My Straightening Beauty Salon</h2>
+            <p class="para">Where beauty and comfort come together. Enjoy smooth hair straightening, stylish hairstyles, 
+                and makeup services perfect for everyday looks or special occasions. Relax with our pedicure and foot care, 
+                and enhance your beauty with expertly shaped eyebrow tattoo and enhancement services. Comfort starts here—confidence goes with you!
+            </p>
+            <a href="protfolio.html" class="btn">Know More</a>
+        </div>
+    </section>
+
+    <!-- section three  -->
+    <section class="sectionThree">
+        <h2>Services For Every Occasion</h2>
+        <p>List down special Services you offer an occasions like weddings, etc</p>
+
+        <div class="servicesBox">
+            <div class="box">
+                <h2>Hair Cutting & Styling</h2>
+                <p>This service includes trimming, shaping, and styling hair to match clients' preferences, 
+                    with options ranging from everyday cuts to formal updos.
+                </p>
+            </div>
+            <div class="box">
+                <h2>Nail Care</h2>
+                <p>Manicures and pedicures shape nails, care for cuticles, and may include polish, extensions, 
+                    or treatments to address foot and nail issues.
+                </p>
+            </div>
+            <div class="box">
+                <h2>Hair Coloring & Treatments</h2>
+                <p>ervices cover everything from all-over color and highlights to deep conditioning, keratin smoothing, 
+                    and scalp treatments for hair health and style.
+                </p>
+            </div>
+            <div class="box">
+                <h2>Photo Makeup</h2>
+                <p>A little detail about the services you've mentioned aboved. Tell them what you do</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- discount section  -->
+    <section class="DiscountSection">
+
+        <div class="img">
+            <img src="img/25off.png" alt="">
+        </div>
+
+        <div class="textinfo">
+            <h2>Book Your Appointment Now And Get 25% Off</h2>
+            <p>Awesome Monsoon Sale - 25% Off on All Professional Make Up only 5$</p>
+        </div>
+
+        <a href="#">BOOK AN APPOINTMENT</a>
+    </section>
+
+    <!-- transformBox -->
+    <div class="transformBox">
+        <h2>Priced Beauty Solutions</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore id earum, voluptas consectetur explicabo
+            tempore aut placeat blanditiis dolores dolorum.</p>
+    </div>
+
+    <!-- section five  -->
+    <section class="sectionFive">
+        <div class="BeautySolutions">
+            <h2>Salon Services</h2>
+            <span></span>
+            <ul>
+                <li>ALL IN TRIO <span>₱1399</span></li>
+                <li>COLOR <span>₱499</span></li>
+                <li>REBOND <span>₱499</span></li>
+                <li>BRAZILLIABN <span>₱499</span></li>
+                <li>HAIR CUT <span>₱499</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Special Services</h2>
+            <span></span>
+            <ul>
+                <li>MICRO BLENDING <span>$95</span></li>
+                <li>MICRO SHADDING <span>$40+</span></li>
+                <li>EYELASH EXTENSION <span>$55</span></li>
+                <li>EYELASH REMOVAL <span>$40+</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Foot Services</h2>
+            <span></span>
+            <ul>
+                <li>MANICURE <span>$95</span></li>
+                <li>PEDICURE <span>$40+</span></li>
+                <li>GEL POLISH <span>$55</span></li>
+                <li>POLYGEL NAILS <span>$40+</span></li>
+                <li>NAIL EXTENSION <span>$40+</span></li>
+                <li>FOOT SPA <span>$40+</span></li>
+            </ul>
+        </div>
+        <div class="BeautySolutions">
+            <h2>Other Services</h2>
+            <span></span>
+            <ul class="scroll-box">
+                <li>ORGANIC <span>$95</span></li>
+                <li>BOTOX CYST <span>$40+</span></li>
+                <li>FOILAYAGE <span>$55</span></li>
+                <li>BALAYAGE <span>$40+</span></li>
+                <li>MILKTEA COLOR <span>$55</span></li>
+                <li>FASHION COLOR <span>$40+</span></li>
+                <li>OMBRE COLOR <span>$55</span></li>
+                <li>COLD WAVE <span>$40+</span></li>
+                <li>HOT OIL <span>$55</span></li>
+                <li>HAIR SPA <span>$40+</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- section six  -->
+    <section class="sectionSix">
+        <h2>Review Us</h2>
+        <div class="icon">
+           <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+            <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+        </div>
+
+        <div class="imgicon">
+            <img src="img/test150x150.jpg" alt="">
+            <i class="fa-solid fa-quote-right"></i>
+        </div>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A rem soluta cupiditate, asperiores consectetur
+            voluptate, dolor deleniti assumenda laboriosam quae culpa natus iure eum quidem cum ducimus fugit tempora
+            sint. <small>Macoy Manuel Veloso</small></p>
+    </section>
+
+    <!-- beforefooter  -->
+    <div class="beforefooter">
+        <div class="box">
+            <div class="logo">Macoy Strengthening Beauty Salon</div>
+            <div class="bf-text"  vv.5rem;">Macoy Manuel Veloso</div>
+            <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam sit magni et
+                consequatur, tenetur ab doloremque totam necessitatibus inventore optio qui? Inventore vel quibusdam
+                exercitationem, nulla asperiores fugiat totam!
+            </p>
+
+            <div class="bf-text" style="margin-top: 1.5rem;">Follow Us</div>
+            <div class="icons">
+                <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+                <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Quick Links</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="bf-text" style="margin-top: 1rem;">Find Us</div>
+            <div class="address">
+                Paliparan 3 Mabuhay City Subd., Blg. 123, Dasmariñas City, Cavite
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="bf-text">Say Hi! </div>
+            <ul class="SayHi">
+                <li><a href="index.html">info@example.com</a></li>
+                <li><a href="about.html">contact@example.com</a></li>
+            </ul>
+
+            <div class="bf-text">Call Us</div>
+            <ul class="SayHi">
+                <li>Phone :+1 2334325532</li>
+                <li>Toll Free:+1 2334325532</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- footer  -->
+    <footer>
+        <div class="fbox">Copyright &copy; 2026 Macoy Strengthening Beauty Salon</div>
+        <div class="fbox">Powered by Macoy Strengthening Beauty Salon</div>
+    </footer>
+
+
+    <!-- js  -->
+<script src="js/script-fixed.js"></script>\n</body>\n\n</html>
