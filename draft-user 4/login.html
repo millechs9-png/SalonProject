@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Modern Login Page | AsmrProg</title>
+    <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <section id="sidebar">
+			<a href="#" class="brand">
+				<i class='bx bxs-heart-circle'></i>
+			</a>
+			<ul class="side-menu top">
+				<li class="active">
+					<a href="home.html">
+						<i class='bx bxs-home' ></i>
+						<span class="text">Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="notification.html">
+						<i class='bx bxs-calendar-bell' ></i>
+						<span class="text">Notification</span>
+					</a>
+				</li>
+                <li>
+					<a href="aboutus.html">
+						<i class='bx bxs-group' ></i>
+						<span class="text">About Us</span>
+					</a>
+				</li>
+				<li>
+					<a href="services.html">
+						<i class='bx bxs-doughnut-chart' ></i>
+						<span class="text">Services</span>
+					</a>
+				</li>
+				<li>
+					<a href="portfolio.html">
+						<i class='bx bxs-star' ></i>
+						<span class="text">Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="contact.html">
+						<i class='bx bxs-group' ></i>
+						<span class="text">Contact Us</span>
+					</a>
+				</li>
+				<li>
+					<a href="reviews.html">
+						<i class='bx bxs-message-dots' ></i>
+						<span class="text">Reviews</span>
+					</a>
+				</li>
+				<li id="account-li">
+					<a href="account.html" class="has-dropdown">
+						<i class='bx bxs-user-circle' ></i>
+						<span class="text">Account</span>
+						<i class='bx bx-chevron-down dropdown-icon'></i>
+					</a>
+					<ul class="drop-menu">
+						<li>
+							<a href="account.html">
+								<i class='bx bxs-user' ></i>
+								<span class="text">Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="mybookings.html">
+								<i class='bx bxs-calendar-check' ></i>
+								<span class="text">My Bookings</span>
+							</a>
+						</li>
+						<li>
+							<a href="bookinghistory.html">
+								<i class='bx bxs-time-five' ></i>
+								<span class="text">Booking History</span>
+							</a>
+						</li>
+						<li>
+							<a href="myreviews.html">
+								<i class='bx bxs-cog' ></i>
+								<span class="text">My Reviews</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="side-menu">
+				<li>
+					<a href="../admin/logout.html" class="logout">
+						<i class='bx bxs-log-out-circle' ></i>
+						<span class="text">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- SIDEBAR -->
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+
+        // Login functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const signInForm = document.querySelector('.form-container.sign-in form');
+            const signUpForm = document.querySelector('.form-container.sign-up form');
+
+            if (signInForm) {
+                signInForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Simulate login success
+                    localStorage.setItem('isLoggedIn', 'true');
+                    alert('Login successful!');
+                    window.location.href = '../home.html';  // Redirect to home
+                });
+            }
+
+            if (signUpForm) {
+                signUpForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Simulate signup success
+                    localStorage.setItem('isLoggedIn', 'true');
+                    alert('Signup successful! Welcome!');
+                    window.location.href = '../home.html';  // Redirect to home
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
