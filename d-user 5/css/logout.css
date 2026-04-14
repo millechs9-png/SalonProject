@@ -1,0 +1,188 @@
+/* Logout Page Custom Styles */
+/* Base styles are imported from style.css */
+
+/* Logout Container */
+#content main .logout-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	margin-top: 36px;
+	justify-content: center;
+}
+
+/* Logout Card */
+#content main .logout-container .logout-card {
+	flex: 1;
+	min-width: 400px;
+	max-width: 500px;
+	background: var(--light);
+	border-radius: 20px;
+	padding: 48px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+#content main .logout-container .logout-card .logout-icon {
+	width: 100px;
+	height: 100px;
+	background: var(--light-red);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+#content main .logout-container .logout-card .logout-icon i {
+	font-size: 48px;
+	color: var(--red);
+}
+
+#content main .logout-container .logout-card h2 {
+	font-size: 28px;
+	font-weight: 600;
+	color: var(--dark);
+	margin-bottom: 12px;
+}
+
+#content main .logout-container .logout-card p {
+	font-size: 14px;
+	color: var(--dark-grey);
+	margin-bottom: 32px;
+	line-height: 1.6;
+}
+
+/* Logout Buttons */
+#content main .logout-container .logout-card .logout-buttons {
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#content main .logout-container .logout-card .logout-buttons a {
+	padding: 12px 32px;
+	border-radius: 36px;
+	font-size: 14px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+#content main .logout-container .logout-card .logout-buttons .btn-cancel {
+	background: var(--grey);
+	color: var(--dark);
+}
+
+#content main .logout-container .logout-card .logout-buttons .btn-cancel:hover {
+	background: var(--dark-grey);
+}
+
+#content main .logout-container .logout-card .logout-buttons .btn-logout {
+	background: var(--red);
+	color: var(--light);
+}
+
+#content main .logout-container .logout-card .logout-buttons .btn-logout:hover {
+	background: #c0392b;
+}
+
+/* Session Info */
+#content main .logout-container .session-info {
+	flex: 1;
+	min-width: 300px;
+	max-width: 400px;
+	background: var(--light);
+	border-radius: 20px;
+	padding: 32px;
+}
+
+#content main .logout-container .session-info h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--dark);
+	margin-bottom: 24px;
+}
+
+#content main .logout-container .session-info .info-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 0;
+	border-bottom: 1px solid var(--grey);
+}
+
+#content main .logout-container .session-info .info-item:last-child {
+	border-bottom: none;
+}
+
+#content main .logout-container .session-info .info-item i {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--light-blue);
+	color: var(--blue);
+	border-radius: 50%;
+	font-size: 18px;
+}
+
+#content main .logout-container .session-info .info-item span {
+	font-size: 14px;
+	color: var(--dark);
+}
+
+/* Custom light-red variable */
+:root {
+	--light-red: #FFEBEE;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+	#content main .logout-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	#content main .logout-container .logout-card,
+	#content main .logout-container .session-info {
+		min-width: 100%;
+		max-width: 100%;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#content main .logout-container .logout-card {
+		padding: 32px 24px;
+	}
+	
+	#content main .logout-container .logout-card .logout-icon {
+		width: 80px;
+		height: 80px;
+	}
+	
+	#content main .logout-container .logout-card .logout-icon i {
+		font-size: 36px;
+	}
+	
+	#content main .logout-container .logout-card h2 {
+		font-size: 24px;
+	}
+	
+	#content main .logout-container .logout-card .logout-buttons {
+		flex-direction: column;
+		width: 100%;
+	}
+	
+	#content main .logout-container .logout-card .logout-buttons a {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
