@@ -1,0 +1,427 @@
+/* Appointment Page Styles */
+.appointment-container {
+    min-height: 100vh;
+    padding: 120px 5% 50px;
+    background-color: #f7f7f7;
+}
+
+.appointment-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.appointment-header h1 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2.5rem;
+    color: #e41345;
+    margin-bottom: 0.5rem;
+}
+
+.appointment-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.appointment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Service Selection */
+.service-selection {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-selection h2,
+.booking-details h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.service-category {
+    margin-bottom: 1.5rem;
+}
+
+.service-category h3 {
+    font-size: 1rem;
+    color: #f70077;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    border-color: #f70077;
+    background-color: #fdf2f4;
+}
+
+.service-item.selected {
+    border-color: #f70077;
+    background-color: #fdf2f4;
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.service-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.service-price {
+    color: #f70077;
+    font-weight: 500;
+}
+
+.slot-info {
+    text-align: right;
+}
+
+.slots-available {
+    font-size: 0.85rem;
+    color: #e41345;
+    font-weight: 500;
+}
+
+.service-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: #fff3cd;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #856404;
+}
+
+.service-note i {
+    color: #ffc107;
+}
+
+/* Booking Details */
+.booking-details {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Calendar */
+.calendar-container {
+    margin-bottom: 2rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #f70077;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.calendar-header button:hover {
+    transform: scale(1.2);
+}
+
+.calendar-header span {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-weekdays span {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.25rem;
+}
+
+.calendar-day {
+    padding: 0.75rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.calendar-day:hover:not(.past-date) {
+    background-color: #fdf2f4;
+    color: #f70077;
+}
+
+.calendar-day.past-date {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.calendar-day.selected {
+    background-color: #f70077;
+    color: #fff;
+}
+
+/* Time Slots */
+.time-slots {
+    margin-bottom: 2rem;
+}
+
+.time-slots h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.time-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.time-btn {
+    padding: 0.75rem;
+    border: 2px solid #eee;
+    background: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.time-btn:hover {
+    border-color: #f70077;
+    color: #f70077;
+}
+
+.time-btn.selected {
+    background-color: #f70077;
+    border-color: #f70077;
+    color: #fff;
+}
+
+/* Booking Summary */
+.booking-summary {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.booking-summary h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.no-service {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.summary-value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Confirm Button */
+.btn-confirm {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #f70077;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm:hover:not(:disabled) {
+    background-color: #e41345;
+}
+
+.btn-confirm:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Stylist Selection */
+.stylist-selection {
+    margin-bottom: 2rem;
+}
+
+.stylist-selection h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.stylist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stylist-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.stylist-item:hover {
+    border-color: #f70077;
+    background-color: #fdf2f4;
+}
+
+.stylist-item.selected {
+    border-color: #f70077;
+    background-color: #fdf2f4;
+}
+
+.stylist-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stylist-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f70077;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.stylist-name {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .appointment-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .appointment-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .slot-info {
+        text-align: left;
+    }
+}

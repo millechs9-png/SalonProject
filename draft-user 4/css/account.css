@@ -1,0 +1,598 @@
+/* Account Page Styles */
+.account-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 86px;
+    background-color: #f7f7f7;
+    max-width: 1107px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styles */
+.account-sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 10px;
+    right: 0;
+    left: 0;
+    height: calc(145vh - 86px);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-header .avatar {
+    width: 85px;
+    height: 85px;
+    margin: 0.5rem auto 0.5rem auto;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-menu li:hover {
+    background-color: #fdf2f4;
+    color: #e41345;
+}
+
+.sidebar-menu li.active {
+    background-color: #fdf2f4;
+    color: #e41345;
+    border-left-color: #e41345;
+}
+
+.sidebar-menu li i {
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.sidebar-menu li span {
+    font-weight: 500;
+}
+
+/* Sidebar Content Cards */
+.sidebar-content {
+    padding: 1rem 1.5rem;
+}
+
+.sidebar-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.sidebar-card-header {
+    padding: 1rem 1rem;
+    background: linear-gradient(135deg, #f70077, #e41345);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+/* Main Content Area */
+.account-content {
+    flex: 1;
+    margin-left: 20px;
+    padding: 1rem;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Profile Columns - Two Column Layout */
+.profile-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.profile-column,
+.preferences-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Profile Picture Section - Centered */
+.profile-picture-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.profile-picture-section .avatar {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.change-photo-btn {
+    font-size: 0.85rem;
+    color: #f70077;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.change-photo-btn:hover {
+    color: #e41345;
+}
+
+.profile-picture-section .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Details - Centered */
+.profile-details {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f70077;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details h3 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem;
+}
+
+.email-verified {
+    color: #28a745;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 0 0.5rem;
+}
+
+.email-verified i {
+    font-size: 0.9rem;
+}
+
+.account-id {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.client-id {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Account Details */
+.account-details {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.account-details .detail-item {
+    margin-bottom: 0.5rem;
+}
+
+.account-details .detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.account-details .detail-item label {
+    display: block;
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.account-details .detail-item p {
+    color: #333;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Editable Input Fields */
+.edit-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: #f70077;
+}
+
+.edit-input[type="tel"] {
+    font-size: 0.95rem;
+}
+
+textarea.edit-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Save Button */
+.btn-save {
+    background-color: #f70077;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+    background-color: #e41345;
+}
+
+/* Edit Profile Button */
+.btn-edit {
+    background-color: transparent;
+    color: #f70077;
+    border: 2px solid #f70077;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #f70077;
+    color: #fff;
+}
+
+/* Detail Display (Static Text) */
+.detail-display {
+    text-align: left;
+}
+
+.detail-display .detail-item {
+    margin-bottom: 1rem;
+    background-color: #f8f8f8;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 3px solid #f70077;
+}
+
+.detail-display .detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-display .detail-item label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-display .detail-item p {
+    color: #333;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Detail Edit (Input Fields) */
+.detail-edit {
+    text-align: left;
+}
+
+/* Preferences Card */
+.preferences-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.preferences-card h3 {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+.preferences-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: 0;
+}
+
+.btn-edit-preferences {
+    background-color: transparent;
+    color: #f70077;
+    border: 2px solid #f70077;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+.preferences-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.53rem;
+    padding-top: 0;
+    border-top: 1px solid #eee;
+}
+
+.preferences-display-buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    padding: 0 173px;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+}
+
+.preferences-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 1rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.preference-item:last-child {
+    border-bottom: no1px solid #eee;
+}
+
+.preference-item label {
+    color: #333;
+    font-weight: 500;
+}
+
+.preference-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #f70077;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background-color: #f70077;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+   background-color: #e41345;
+}
+
+
+/* Legal Policy Card with Accordion */
+.legal-policy-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden; /* important for animation */
+}
+
+.accordion-header {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.accordion-header i {
+  margin-right: 8px;
+  color: #555;
+}
+
+.accordion-body {
+  max-height: 0;              /* collapsed by default */
+  overflow: hidden;
+  transition: max-height 0.1s ease; /* smooth animation */
+  padding: 0 12px;            /* only horizontal padding */
+  font-size: 14px;
+  color: #1d1d1d;
+}
+
+.accordion-item.active .accordion-body {
+  max-height: 550px;          /* enough space for content */
+  padding: 10px 12px;         /* restore vertical padding */
+}
+
+/* Responsive Design */
+@media (max-width: 1107px) {
+    .account-container {
+        max-width: 1107px;
+    }
+    .account-sidebar {
+        width: 220px;
+    }
+    .profile-columns {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-columns {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 924px) {
+    .account-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    .account-sidebar {
+        width: 280px;
+        position: relative;
+        height: auto;
+    }
+    .account-content {
+        margin-left: 1rem;
+        padding: 0.5rem;
+    }
+    .profile-columns {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        flex-direction: column;
+    }
+    .account-sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .account-content {
+        margin-left: 0;
+        padding: 1rem 0.5rem;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
