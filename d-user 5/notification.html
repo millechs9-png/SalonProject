@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Boxicons -->
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+		<!-- My CSS -->
+		<link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/notification.css">
+		<title>CustomerHub</title>
+        <script src="https://kit.fontawesome.com/7a6c6b42a6.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<!-- SIDEBAR -->
+		<section id="sidebar">
+			<a href="#" class="brand">
+				<i class='bx bxs-heart-circle'></i>
+			</a>
+			<ul class="side-menu top">
+				<li class="active">
+					<a href="home.html">
+						<i class='bx bxs-home' ></i>
+						<span class="text">Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="notification.html">
+						<i class='bx bxs-bell' ></i>
+						<span class="text">Notification</span>
+					</a>
+				</li>
+                <li>
+					<a href="aboutus.html">
+						<i class='bx bxs-group' ></i>
+						<span class="text">About Us</span>
+					</a>
+				</li>
+				<li>
+					<a href="services.html">
+						<i class='bx bxs-doughnut-chart' ></i>
+						<span class="text">Services</span>
+					</a>
+				</li>
+				<li>
+					<a href="portfolio.html">
+						<i class='bx bxs-star' ></i>
+						<span class="text">Portfolio</span>
+					</a>
+				</li>
+				<li>
+					<a href="contact.html">
+						<i class='bx bxs-phone' ></i>
+						<span class="text">Contact Us</span>
+					</a>
+				</li>
+				<li>
+					<a href="reviews.html">
+						<i class='bx bxs-message-dots' ></i>
+						<span class="text">Reviews</span>
+					</a>
+				</li>
+				<li id="account-li">
+					<a href="account.html" class="has-dropdown">
+						<i class='bx bxs-user-circle' ></i>
+						<span class="text">Account</span>
+						<i class='bx bx-chevron-down dropdown-icon'></i>
+					</a>
+					<ul class="drop-menu">
+						<li>
+							<a href="account.html">
+								<i class='bx bxs-user' ></i>
+								<span class="text">Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="mybookings.html">
+								<i class='bx bxs-calendar-check' ></i>
+								<span class="text">My Bookings</span>
+							</a>
+						</li>
+						<li>
+							<a href="bookinghistory.html">
+								<i class='bx bxs-time-five' ></i>
+								<span class="text">Booking History</span>
+							</a>
+						</li>
+						<li>
+							<a href="myreviews.html">
+								<i class='bx bxs-cog' ></i>
+								<span class="text">My Reviews</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="side-menu">
+				<li>
+					<a href="../admin/logout.html" class="logout">
+						<i class='bx bxs-log-out-circle' ></i>
+						<span class="text">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<!-- SIDEBAR -->
+
+
+		<!-- CONTENT -->
+		<section id="content">
+			<!-- NAVBAR -->
+			<nav>
+				<i class='bx bx-menu' ></i>
+				<a href="#" class="nav-link">My Account</a>
+				<form action="#">
+					<div class="form-input">
+						<input type="search" placeholder="Search bookings...">
+						<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+					</div>
+				</form>
+				<a href="appointments.html" class="appointment-btn">
+					<i class='bx bx-calendar-plus'></i>
+					<span>Book Now</span>
+				</a>
+				<input type="checkbox" id="switch-mode" hidden>
+				<label for="switch-mode" class="switch-mode"></label>
+				<a href="support.html" class="notification">
+					<i class='bx bxs-bell' ></i>
+					<span class="num">3</span>
+				</a>
+				<a href="profile.html" class="profile">
+					<img src="img/profile-image.jpg">
+				</a>
+			</nav>
+			<!-- NAVBAR -->
+
+			<main>
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Notifications</h1>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="index.html">Dashboard</a>
+                            </li>
+                            <li><i class='bx bx-chevron-right' ></i></li>
+                            <li>
+                                <a class="active" href="notification.html">Notifications</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn-clear-all" onclick="clearAllNotifications()">
+                        <i class='bx bx-trash' ></i>
+                        <span class="text">Clear All</span>
+                    </button>
+                </div>
+
+                <!-- Notification Filters -->
+                <div class="notification-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="order">Orders</button>
+                    <button class="filter-btn" data-filter="message">Messages</button>
+                    <button class="filter-btn" data-filter="system">System</button>
+                </div>
+
+                <!-- Notifications List -->
+                <div class="notifications-container">
+                    
+                    <!-- Unread Notifications Section -->
+                    <div class="notification-section">
+                        <h3 class="section-title">Unread</h3>
+                        
+                        <div class="notification-item unread" data-type="order">
+                            <div class="notification-icon order">
+                                <i class='bx bx-calendar' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>New Appointment Confirmed</h4>
+                                <p>John Doe placed a new appointment for Hair Treatment Service</p>
+                                <span class="notification-time">2 minutes ago</span>
+                            </div>
+                            <button class="mark-read-btn" onclick="markAsRead(this)">
+                                <i class='bx bx-check' ></i>
+                            </button>
+                        </div>
+
+                        <div class="notification-item unread" data-type="message">
+                            <div class="notification-icon message">
+                                <i class='bx bx-message-rounded-dots' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>New Feedback</h4>
+                                <p>Sarah left a 5-star review on your service</p>
+                                <span class="notification-time">15 minutes ago</span>
+                            </div>
+                            <button class="mark-read-btn" onclick="markAsRead(this)">
+                                <i class='bx bx-check' ></i>
+                            </button>
+                        </div>
+
+                        <div class="notification-item unread" data-type="system">
+                            <div class="notification-icon system">
+                                <i class='bx bx-error' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>System Alert</h4>
+                                <p>Your storage is running low. Consider cleaning up old data.</p>
+                                <span class="notification-time">1 hour ago</span>
+                            </div>
+                            <button class="mark-read-btn" onclick="markAsRead(this)">
+                                <i class='bx bx-check' ></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Read Notifications Section -->
+                    <div class="notification-section">
+                        <h3 class="section-title">Earlier</h3>
+
+                        <div class="notification-item read" data-type="order">
+                            <div class="notification-icon order">
+                                <i class='bx bx-calendar' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Appointment Completed</h4>
+                                <p>Order #1234 has been successfully delivered</p>
+                                <span class="notification-time">Yesterday at 3:45 PM</span>
+                            </div>
+                            <button class="delete-btn" onclick="deleteNotification(this)">
+                                <i class='bx bx-x' ></i>
+                            </button>
+                        </div>
+
+                        <div class="notification-item read" data-type="message">
+                            <div class="notification-icon message">
+                                <i class='bx bx-message-rounded-dots' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>New Message</h4>
+                                <p>You have a new message from customer support team</p>
+                                <span class="notification-time">2 days ago</span>
+                            </div>
+                            <button class="delete-btn" onclick="deleteNotification(this)">
+                                <i class='bx bx-x' ></i>
+                            </button>
+                        </div>
+
+                        <div class="notification-item read" data-type="system">
+                            <div class="notification-icon system">
+                                <i class='bx bx-cog' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>System Update</h4>
+                                <p>New version v2.0 is available. Update now!</p>
+                                <span class="notification-time">3 days ago</span>
+                            </div>
+                            <button class="delete-btn" onclick="deleteNotification(this)">
+                                <i class='bx bx-x' ></i>
+                            </button>
+                        </div>
+
+                        <div class="notification-item read" data-type="order">
+                            <div class="notification-icon order">
+                                <i class='bx bx-calendar' ></i>
+                            </div>
+                            <div class="notification-content">
+                                <h4>Appointment Cancelled</h4>
+                                <p>BK1235. You have cancelled your appointment.</p>
+                                <span class="notification-time">1 week ago</span>
+                            </div>
+                            <button class="delete-btn" onclick="deleteNotification(this)">
+                                <i class='bx bx-x' ></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State (hidden by default) -->
+                <div class="empty-state" id="emptyState">
+                    <i class='bx bx-bell-off' ></i>
+                    <h3>No Notifications</h3>
+                    <p>You're all caught up! Check back later for new updates.</p>
+                </div>
+			</main>
+			<!-- beforefooter  -->
+            <div class="beforefooter">
+                <div class="box">
+                    <div class="logo">Macoy Strengthening Beauty Salon</div>
+                    <div class="bf-text"  vv.5rem;">Macoy Manuel Veloso</div>
+                    <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsam sit magni et
+                         consequatur, tenetur ab doloremque totam necessitatibus inventore optio qui? Inventore vel quibusdam
+                        exercitationem, nulla asperiores fugiat totam!
+                    </p>
+
+                    <div class="bf-text" style="margin-top: 1.5rem;">Follow Us</div>
+                    <div class="icons">
+                        <a href="https://www.facebook.com/markniel.veloso" target="_blank" class="fa-brands fa-facebook-f"></a>
+                        <a href="https://www.google.com" target="_blank" class="fa-brands fa-google"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="bf-text">Quick Links</div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="bf-text" style="margin-top: 1rem;">Find Us</div>
+                    <div class="address">
+                        Paliparan 3 Mabuhay City Subd., Blg. 123, Dasmariñas City, Cavite
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="bf-text">Say Hi! </div>
+                    <ul class="SayHi">
+                        <li><a href="index.html">info@example.com</a></li>
+                        <li><a href="about.html">contact@example.com</a></li>
+                    </ul>
+
+                    <div class="bf-text">Call Us</div>
+                    <ul class="SayHi">
+                        <li>Phone :+1 2334325532</li>
+                        <li>Toll Free:+1 2334325532</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- footer  -->
+                <footer>
+                    <div class="fbox">Copyright &copy; 2026 Macoy Strengthening Beauty Salon</div>
+                    <div class="fbox">Powered by GROUP 8</div>
+                </footer>
+		</section>
+		<!-- CONTENT -->
+	
+		<script src="js/script.js"></script>
+        <script>
+            // Notification functionality
+            function markAsRead(btn) {
+                const notificationItem = btn.closest('.notification-item');
+                notificationItem.classList.remove('unread');
+                notificationItem.classList.add('read');
+                btn.outerHTML = '<button class="delete-btn" onclick="deleteNotification(this)"><i class="bx bx-x"></i></button>';
+                updateNotificationCount();
+            }
+
+            function deleteNotification(btn) {
+                const notificationItem = btn.closest('.notification-item');
+                notificationItem.style.animation = 'slideOut 0.3s ease forwards';
+                setTimeout(() => {
+                    notificationItem.remove();
+                    checkEmptyState();
+                }, 300);
+                updateNotificationCount();
+            }
+
+            function clearAllNotifications() {
+                const notifications = document.querySelectorAll('.notification-item');
+                if (notifications.length === 0) return;
+                
+                if(confirm('Are you sure you want to clear all notifications?')) {
+                    notifications.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.animation = 'slideOut 0.3s ease forwards';
+                        }, index * 100);
+                    });
+                    setTimeout(() => {
+                        document.querySelectorAll('.notification-item').forEach(item => item.remove());
+                        checkEmptyState();
+                        updateNotificationCount();
+                    }, notifications.length * 100 + 300);
+                }
+            }
+
+            function updateNotificationCount() {
+                const unreadCount = document.querySelectorAll('.notification-item.unread').length;
+                const navNotification = document.querySelector('#content nav .notification .num');
+                if (navNotification) {
+                    navNotification.textContent = unreadCount;
+                    if (unreadCount === 0) {
+                        navNotification.style.display = 'none';
+                    } else {
+                        navNotification.style.display = 'flex';
+                    }
+                }
+            }
+
+            function checkEmptyState() {
+                const notifications = document.querySelectorAll('.notification-item');
+                const emptyState = document.getElementById('emptyState');
+                const notificationsContainer = document.querySelector('.notifications-container');
+                
+                if (notifications.length === 0) {
+                    emptyState.style.display = 'block';
+                    notificationsContainer.style.display = 'none';
+                }
+            }
+
+            // Filter functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filter = btn.dataset.filter;
+                    const notifications = document.querySelectorAll('.notification-item');
+                    
+                    notifications.forEach(item => {
+                        if (filter === 'all' || item.dataset.type === filter) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Add slide out animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideOut {
+                    to {
+                        opacity: 0;
+                        transform: translateX(100%);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        </script>
+	</body>
+</html>
+
